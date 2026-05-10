@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>彝饰 · AI金饰3D纹样平台</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <span class="yi-symbol">ꆀꃅꆈ</span>
+    <h1>彝饰 · AI金饰3D纹样平台</h1>
+    <span class="yi-symbol">ꆀꃅꆈ</span>
+  </div>
+
+  <div class="app-container">
+    <!-- 左侧面板 -->
+    <div class="panel panel-left">
+
+      <!-- 🔴 纹样库已经移到这里！（左侧顶部）-->
+      <div class="card">
+        <div class="card-title">🏛️ 彝族非遗纹样库</div>
+        <div id="patternLibrary" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; width: 100%; max-height: 320px; overflow-y: auto;">
+          <img src="patterns/1.png" class="pattern-item" data-src="patterns/1.png">
+          <img src="patterns/2.png" class="pattern-item" data-src="patterns/2.png">
+          <img src="patterns/3.png" class="pattern-item" data-src="patterns/3.png">
+          <img src="patterns/4.png" class="pattern-item" data-src="patterns/4.png">
+          <img src="patterns/5.png" class="pattern-item" data-src="patterns/5.png">
+          <img src="patterns/6.png" class="pattern-item" data-src="patterns/6.png">
+          <img src="patterns/7.png" class="pattern-item" data-src="patterns/7.png">
+          <img src="patterns/8.png" class="pattern-item" data-src="patterns/8.png">
+          <img src="patterns/9.png" class="pattern-item" data-src="patterns/9.png">
+          <img src="patterns/10.png" class="pattern-item" data-src="patterns/10.png">
+          <img src="patterns/11.png" class="pattern-item" data-src="patterns/11.png">
+          <img src="patterns/12.png" class="pattern-item" data-src="patterns/12.png">
+          <img src="patterns/13.png" class="pattern-item" data-src="patterns/13.png">
+          <img src="patterns/14.png" class="pattern-item" data-src="patterns/14.png">
+          <img src="patterns/15.png" class="pattern-item" data-src="patterns/15.png">
+          <img src="patterns/16.png" class="pattern-item" data-src="patterns/16.png">
+          <img src="patterns/17.png" class="pattern-item" data-src="patterns/17.png">
+          <img src="patterns/18.png" class="pattern-item" data-src="patterns/18.png">
+          <img src="patterns/19.png" class="pattern-item" data-src="patterns/19.png">
+          <img src="patterns/20.png" class="pattern-item" data-src="patterns/20.png">
+          <img src="patterns/21.png" class="pattern-item" data-src="patterns/21.png">
+          <img src="patterns/22.png" class="pattern-item" data-src="patterns/22.png">
+          <img src="patterns/23.png" class="pattern-item" data-src="patterns/23.png">
+          <img src="patterns/24.png" class="pattern-item" data-src="patterns/24.png">
+          <img src="patterns/25.png" class="pattern-item" data-src="patterns/25.png">
+          <img src="patterns/26.png" class="pattern-item" data-src="patterns/26.png">
+          <img src="patterns/27.png" class="pattern-item" data-src="patterns/27.png">
+          <img src="patterns/28.png" class="pattern-item" data-src="patterns/28.png">
+          <img src="patterns/29.png" class="pattern-item" data-src="patterns/29.png">
+          <img src="patterns/30.png" class="pattern-item" data-src="patterns/30.png">
+          <img src="patterns/31.png" class="pattern-item" data-src="patterns/31.png">
+          <img src="patterns/32.png" class="pattern-item" data-src="patterns/32.png">
+          <img src="patterns/33.png" class="pattern-item" data-src="patterns/33.png">
+          <img src="patterns/34.png" class="pattern-item" data-src="patterns/34.png">
+          <img src="patterns/35.png" class="pattern-item" data-src="patterns/35.png">
+          <img src="patterns/36.png" class="pattern-item" data-src="patterns/36.png">
+          <img src="patterns/37.png" class="pattern-item" data-src="patterns/37.png">
+          <img src="patterns/38.png" class="pattern-item" data-src="patterns/38.png">
+          <img src="patterns/39.png" class="pattern-item" data-src="patterns/39.png">
+          <img src="patterns/40.png" class="pattern-item" data-src="patterns/40.png">
+          <img src="patterns/41.png" class="pattern-item" data-src="patterns/41.png">
+          <img src="patterns/42.png" class="pattern-item" data-src="patterns/42.png">
+          <img src="patterns/43.png" class="pattern-item" data-src="patterns/43.png">
+          <img src="patterns/44.png" class="pattern-item" data-src="patterns/44.png">
+          <img src="patterns/45.png" class="pattern-item" data-src="patterns/45.png">
+          <img src="patterns/46.png" class="pattern-item" data-src="patterns/46.png">
+          <img src="patterns/47.png" class="pattern-item" data-src="patterns/47.png">
+          <img src="patterns/48.png" class="pattern-item" data-src="patterns/48.png">
+          <img src="patterns/49.png" class="pattern-item" data-src="patterns/49.png">
+        </div>
+      </div>
+
+      <!-- 大预览区 -->
+      <div class="card preview-card">
+        <div class="card-title">◈ 纹样预览 ◈</div>
+        <canvas id="patternCanvas" width="512" height="512"></canvas>
+      </div>
+
+      <!-- 纹样来源 -->
+      <div class="card">
+        <div class="card-title">纹样来源</div>
+        <div class="button-grid">
+          <button id="btnPreset1">☀️ 太阳纹</button>
+          <button id="btnPreset2">🔥 火焰纹</button>
+          <button id="btnPreset3">福 福字</button>
+          <button id="btnGenerate">🎲 随机</button>
+          <button id="btnUpload">📁 导入</button>
+          <button id="btnAIGenerate">🤖 AI</button>
+        </div>
+        <input type="file" id="fileInput" accept="image/*" style="display:none">
+      </div>
+    </div>
+
+    <!-- 右侧面板 -->
+    <div class="panel panel-right">
+      <div id="viewer3d"></div>
+      <div class="card control-card">
+        <div class="card-title">◈ 首饰类型 ◈</div>
+        <select id="shapeSelect">
+          <option value="earringRound">🔥 耳钉 · 圆形</option>
+          <option value="earringStar">⭐ 耳钉 · 八角星</option>
+          <option value="earringHoop">💫 耳环（圆环）</option>
+          <option value="pendantRound">✨ 吊坠 · 圆形</option>
+          <option value="pendantStar">🌟 吊坠 · 八角星</option>
+          <option value="ring">💍 戒指</option>
+          <option value="wideRing">⭕ 宽版戒指</option>
+          <option value="bracelet">🌀 手镯</option>
+        </select>
+
+        <div class="card-title" style="margin-top:16px;">◈ 饰品工艺 ◈</div>
+<select id="craftSelect">
+  <option value="polish">✨ 抛光</option>
+  <option value="matte">🪵 磨砂</option>
+  <option value="brushed">🧵 拉丝</option>
+</select>
+
+        <div class="card-title" style="margin-top:16px;">◈ 实时调整 ◈</div>
+        <div class="param-group">
+          <label>整体尺寸 <span id="scaleVal">1.00</span></label>
+          <input type="range" id="scaleSlider" min="0.5" max="1.8" step="0.01" value="1.0">
+          <label>粗细 / 厚度 <span id="thickVal">1.00</span></label>
+          <input type="range" id="thickSlider" min="0.3" max="1.8" step="0.01" value="1.0">
+          <label>浮雕深度 <span id="depthVal">0.30</span></label>
+          <input type="range" id="depthSlider" min="0.00" max="0.7" step="0.01" value="0.01">
+          <label>纹样大小 <span id="patternScaleVal">1.00</span></label>
+          <input type="range" id="patternScaleSlider" min="0.3" max="3.0" step="0.01" value="1.0">
+          
+          <label>图案颜色</label>
+          <input type="color" id="patternColor" value="#ffffff">
+          <label>水平偏移 U <span id="uVal">0.00</span></label>
+          <input type="range" id="uSlider" min="-1" max="1" step="0.01" value="0">
+          <label>垂直偏移 V <span id="vVal">0.00</span></label>
+          <input type="range" id="vSlider" min="-1" max="1" step="0.01" value="0">
+        </div>
+
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+          <button id="btn3D" class="btn-gold btn-large">✨ 生成3D</button>
+          <button id="btnExport" class="btn-export btn-large">⬇️ 导出 STL</button>
+        </div>
+        <p class="hint">💡 先选纹样，再点生成3D。滑块可实时调节。</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
+
+<!-- 彝族AI提问精美弹窗 -->
+<div id="askBox" class="ai-popup">
+  <div class="ai-card">
+    <h3>🏮 彝族非遗文化 · AI智能问答</h3>
+    <p>请输入您想了解的纹样、节日、民俗、寓意</p>
+    <input type="text" id="askInput" placeholder="请输入问题">
+    <div class="ai-btn-wrap">
+      <button class="ai-close">取消</button>
+      <button class="ai-send">发送查询</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI漂亮回答弹窗 -->
+<div id="ansBox" class="ai-popup">
+  <div class="ai-card">
+    <h3>✨ AI智能解答</h3>
+    <div id="ansText"></div>
+    <button class="ai-ok">确认关闭</button>
+  </div>
+</div>
+
